@@ -1,0 +1,14 @@
+# Add files here to ignore them from prettier formatting
+
+**/dist
+**/coverage
+**/node_modules
+**/storybook.requires.js
+**/.vscode
+!vscode/extensions.json
+**/.terraform
+*.md
+.yarn/
+**/*.tfstate
+**/*.tfstate.backup
+**/.next

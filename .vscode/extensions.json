@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "googlecloudtools.cloudcode",
+        "jsayol.firebase-explorer",
+        "zxh404.vscode-proto3",
+        "vscode-icons-team.vscode-icons",
+        "bradlc.vscode-tailwindcss",
+        "rust-lang.rust-analyzer",
+        "serayuzgur.crates",
+        "nrwl.angular-console",
+        "firsttris.vscode-jest-runner"
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "tasksRunnerOptions": {
+        "default": {}
+    },
+    "targetDefaults": {
+        "build": {
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        },
+        "test": {
+            "inputs": [
+                "default",
+                "^production",
+                "{workspaceRoot}/jest.preset.js"
+            ]
+        },
+        "e2e": {
+            "inputs": ["default", "^production"]
+        },
+        "lint": {
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+        },
+        "build-storybook": {
+            "inputs": [
+                "default",
+                "^production",
+                "!{projectRoot}/.storybook/**/*",
+                "!{projectRoot}/.storybook/**/*"
+            ]
+        }
+    },
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "production": [
+            "default",
+            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+            "!{projectRoot}/tsconfig.spec.json",
+            "!{projectRoot}/jest.config.[jt]s",
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/.storybook/**/*",
+            "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+            "!{projectRoot}/.storybook/**/*",
+            "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+        ],
+        "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
+    },
+    "generators": {
+        "@nrwl/react": {
+            "application": {
+                "babel": true
+            },
+            "library": {
+                "unitTestRunner": "jest"
+            }
+        },
+        "@nrwl/next": {
+            "application": {
+                "style": "css",
+                "linter": "eslint"
+            }
+        }
+    }
+}

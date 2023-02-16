@@ -1,0 +1,7 @@
+{
+    "name": "infra-bucket-state",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/infra/bucket",
+    "projectType": "library",
+    "tags": []
+}

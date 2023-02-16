@@ -1,0 +1,7 @@
+{
+    "name": "infra-wif",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/infra/workload_identity_federation",
+    "projectType": "library",
+    "tags": []
+}

@@ -1,0 +1,45 @@
+{
+    "name": "workspace",
+    "$schema": "node_modules/nx/schemas/project-schema.json",
+    "targets": {
+        "version": {
+            "executor": "@jscutlery/semver:version",
+            "options": {
+                "syncVersions": false,
+                "tagPrefix": "v",
+                "allowEmptyRelease": false,
+                "skipCommitTypes": [
+                    "chore",
+                    "build",
+                    "ci",
+                    "docs",
+                    "refactor",
+                    "test"
+                ],
+                "noVerify": true,
+                "changelogHeader": "# Universal Changelog\n",
+                "push": false,
+                "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+                "remote": "origin",
+                "baseBranch": "main",
+                "preset": "conventional"
+            }
+        },
+        "deploy": {
+            "executor": "nx:run-commands",
+            "defaultConfiguration": "development",
+            "configurations": {
+                "development": {
+                    "command": "tools/scripts/deploy.sh development"
+                },
+                "production": {
+                    "command": "tools/scripts/deploy.sh production"
+                }
+            }
+        },
+        "setup": {
+            "command": "tools/scripts/setup.sh"
+        }
+    },
+    "implicitDependencies": ["infra-wif"]
+}

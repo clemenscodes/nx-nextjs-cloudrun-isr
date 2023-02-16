@@ -1,0 +1,15 @@
+{
+    "name": "infra-cdn",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/infra/cdn",
+    "projectType": "library",
+    "implicitDependencies": [
+        "infra-compute-backend-bucket",
+        "infra-compute-certificate",
+        "infra-compute-external-ip",
+        "infra-compute-forwarding-rule",
+        "infra-compute-proxy",
+        "infra-compute-url-map"
+    ],
+    "tags": []
+}
